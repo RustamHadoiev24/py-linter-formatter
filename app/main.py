@@ -21,3 +21,11 @@ def format_linter_report(linter_report: dict) -> list:
         format_single_linter_file(path, errors)
         for path, errors in linter_report.items()
     ]
+
+
+def average_temperature(months: dict, temperature: int | float) -> dict:
+    return {
+        month: avg_temp
+        for month, avg_temp in months.items()
+        if avg_temp > temperature
+    }
